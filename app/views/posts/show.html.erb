@@ -1,7 +1,7 @@
 <h3>Post for current user</h3>
 
 <h4><%= @post.title %></h4>
-<div><%= @post.title %></div>
+<div><%= @post.body %></div>
 <br/>
 
 Comments:
@@ -10,9 +10,9 @@ Comments:
 <% end %>
 =========================
 <h4>Other posts this user</h4>
-<div><% @posts.each do |post| %>
+<div><% @user_posts.each do |post| %>
     post_id: <%= post.id %>
-    <%= link_to "#{post.title}", user_post_path(current_user.id, post.id) %>
+    <%= link_to "#{post.title}", user_post_path(post.user_id, post.id) %>
     <% end %>
 </div>
 
