@@ -2,12 +2,13 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[new edit update destroy]
 
   def index
-    @posts = current_user.posts.all
+    @posts = Post.all
   end
 
   def show
-    @posts = current_user.posts.all
     @post = Post.find(params[:id])
+    user = User.find_by_id(@post.user_id)
+    @user_posts = user.posts.all
   end
 
   def new
