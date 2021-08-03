@@ -1,3 +1,5 @@
 class Comment < ApplicationRecord
-  validates :description, presence: true
+  belongs_to :post, dependent: destroy
+
+  validates :description, presence: true, length: { minimum: 2 }
 end

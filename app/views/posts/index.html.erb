@@ -1,0 +1,6 @@
+<h2>Posts of all users</h2>
+
+<% @posts.each do |post| %>
+  <h3>Title: <%= post.title %></h3>
+  <div><%= post.body %></div>
+<% end %>
