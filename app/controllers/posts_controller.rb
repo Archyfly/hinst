@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: %i[new edit update destroy]
 
   def index
-    @posts = Post.all
+    @posts = current_user.posts.all
   end
 
   def show
+    @posts = current_user.posts.all
     @post = Post.find(params[:id])
   end
 
