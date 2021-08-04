@@ -1,3 +1,26 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+#box-container {
+  background: #e7e5e5;
+  display: flex;
+  align-content: center;
+  //width: auto;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  //flex-basis: 100px;
+  padding: 2px;
+  margin: 2px;
+  font-family: "Times New Roman", Arial, Sans-Serif;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+.card-img-top {
+  width: 150px;
+  font-family: "Times New Roman", Arial, Sans-Serif;
+}

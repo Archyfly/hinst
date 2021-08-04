@@ -1,0 +1,11 @@
+<%= form_with model: [current_user, @post] do |form| %>
+  <h4>
+    <%= form.label :title %><br/>
+    <%= form.text_field :title, size: "60" %><br/>
+
+    <%= form.label :body %><br/>
+    <%= form.text_area :body, size: "60x10" %>
+  </h4>
+
+  <p><%= form.submit %></p>
+<% end %>

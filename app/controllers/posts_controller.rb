@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     user = User.find_by_id(@post.user_id)
     @user_posts = user.posts.all
+    @post_comments = @post.comments
   end
 
   def new
@@ -18,7 +19,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to @post
+      redirect_to user_post_path(current_user, @post)
     else
       render :new
     end

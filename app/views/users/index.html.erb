@@ -1,0 +1,11 @@
+<h3>Users info</h3>
+
+<% @users.each do |user| %>
+  <h3> Name: <%= user.username %></h3>
+  <p> Age: <%= user.age %></p>
+  <p> Gender: <%= user.gender %></p>
+  <p>Avatar user</p>
+  <p> Posts count: <%= user.posts.count %>
+  </p>
+  <div><%# post.body %></div>
+<% end %>

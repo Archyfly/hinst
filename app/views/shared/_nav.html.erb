@@ -1,8 +1,13 @@
-<nav class="navbar navbar-light .bg-gradient-light" style="background-color: #7b7b9b;">
-  <%= link_to 'Home Insta Blog', root_path, class: 'navbar-brand' %>
+<nav class="navbar navbar-inverse", style="align-content: center; background-color: #464646; ">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'Home Insta Blog', root_path, class: 'navbar-brand' %>
+    </div>
 
-  <div class="navbar-text">
-    <div style="text-align: right">
+
+  <ul class="nav navbar-nav pull-right" style="color: #F7F7F7 ">
+    <li><%= link_to 'Home', root_path %></li>
+    <ul class="nav navbar-nav pull-right">
     <% if user_signed_in? %>
       Welcome, <b><%= current_user.username %></b> |
       <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
@@ -10,6 +15,8 @@
       <%= link_to "Log in", new_user_session_path %>
       <%= link_to "Sign Up", new_user_registration_path %>
     <% end %>
-    </div>
+    </ul>
+  </ul>
+  </div>
   </div>
 </nav>
